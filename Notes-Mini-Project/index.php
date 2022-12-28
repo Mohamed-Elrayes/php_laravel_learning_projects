@@ -10,10 +10,10 @@ $dp = new DataBase($config['db']);
 
 $id = $_GET['id'];
 
-$query = 'SELECT * FROM posts where id = :id'; // :any_word or use ?
+$query = 'SELECT * FROM notes'; // :any_word or use ?
 
-$posts = $dp->query($query, ['id' => $id])->fetchAll();
-
-foreach ($posts as $post) {
-    echo '<li>' . $post['title'] . '</li>';
-}
+$posts = $dp->query($query)->fetchAll();
+dd($posts);
+//foreach ($posts as $post) {
+//    echo '<li>' . $post['title'] . '</li>';
+//}
